@@ -2,6 +2,8 @@
 <html>
   <head>
     <title><%= title %></title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 
@@ -10,13 +12,33 @@
   <body>
     <% include _menu %>
 
-    <div class="container">
-      <h1><%= title %></h1>
-      <p>Welcome to <%= title %></p>
+    <div id="app" class="container">
+      <h1>ToDo</h1>
+      <div class="row">
+        <ul class="list-group col-lg-6">
+          <li v-for="(item, index) of items" class="list-group-item" :class="{'text-strikethrough': item.checked}">
+            <input v-model="item.checked" type="checkbox"/>
+            <span v-if="item.isEditMode">
+              <input type="text" v-model="item.text" v-on:keyup.enter="toggleEditMode(item)" v-focus>
+            </span>
+            <span v-show="!item.isEditMode" v-on:click="toggleEditMode(item)">
+              {{item.text}}
+            </span>
+
+            <div class="pull-right" v-on:click="deleteItem(index)">
+              <i class="fa fa-trash text-danger"></i>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <button type="button" class="btn btn-success" @click="addItem">Add</button>
     </div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="/js/todo.js"></script>
   </body>
 </html>

@@ -20,7 +20,7 @@
       </ul>
     </div>
 
-      <button type="button" class="btn btn-success" @click="addItem">Add</button>
+    <button type="button" class="btn btn-success" @click="addItem">Add</button>
   </div>
 </template>
 
