@@ -3,13 +3,22 @@
   "version": "1.0.0",
   "description": "Express app using Vue on the front-end for select pages",
   "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/jwynveen/demo-js-framework/vue-client"
   },
   "author": "jwynveen",
-  "license": "ISC"
+  "dependencies": {
+    "body-parser": "~1.16.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.0",
+    "ejs": "~2.5.5",
+    "express": "~4.14.1",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.2"
+  }
 }
