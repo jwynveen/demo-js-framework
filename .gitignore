@@ -35,3 +35,14 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+# Miscellaneous
+*~
+*#
+.DS_STORE
+.idea
+.node_history
+.sass-cache
+.vscode
+typings
+.eslintcache
