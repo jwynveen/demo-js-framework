@@ -16,9 +16,9 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><router-link to="/todo">Home</router-link></li>
-            <li><router-link to="/about">About</router-link></li>
-            <li><router-link to="/contact">Contact</router-link></li>
+            <router-link active-class="active" tag="li" to="/todo"><a>Home</a></router-link>
+            <router-link active-class="active" tag="li" to="/about"><a>About</a></router-link>
+            <router-link active-class="active" tag="li" to="/contact"><a>Contact</a></router-link>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -46,5 +46,12 @@
   .navbar-brand img {
     max-height: 1em;
     display: inline-block;
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .25s
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+    opacity: 0
   }
 </style>
