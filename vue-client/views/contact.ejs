@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Contact</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 
@@ -11,8 +11,20 @@
     <% include _menu %>
 
     <div class="container">
-      <h1><%= title %></h1>
-      <p>Welcome to <%= title %></p>
+      <h1>Contact</h1>
+
+      <% if (isPost) { %>
+        <pre><%= JSON.stringify(formData, null, 2) %></pre>
+      <% } else { %>
+        <form method="post">
+          <div class="form-group">
+            <label class="control-label">Name</label>
+            <input type="text" name="name" />
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      <% } %>
     </div>
 
 
