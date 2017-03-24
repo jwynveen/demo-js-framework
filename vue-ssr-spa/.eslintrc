@@ -1,0 +1,36 @@
+{
+  "fix": true,
+  "extends": "airbnb-base",
+  "plugins": [
+    "import",
+    "promise"
+  ],
+  "env": {
+    "node": true
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2017
+  },
+  "globals": {
+    "window": true,
+    "navigator": true
+  },
+  "rules": {
+    "max-len": "off",
+    "no-console": ["warn"],
+    "no-param-reassign": 0,
+    "no-shadow": "off",
+    "no-underscore-dangle": "off",
+    "object-curly-spacing": ["error", "never"],
+
+    // Override airbnb
+    "arrow-parens": ["error", "always"],
+    "no-restricted-syntax": [
+      "error",
+      "DebuggerStatement",
+      "LabeledStatement",
+      "WithStatement"
+    ],
+  }
+}

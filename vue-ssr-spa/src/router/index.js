@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import Vue from 'vue';
+import Router from 'vue-router';
 
 Vue.use(Router);
 
@@ -17,13 +17,13 @@ Vue.use(Router);
 
 export default new Router({
   mode: 'history',
-  scrollBehavior: () => ({ y: 0 }),
+  scrollBehavior: () => ({y: 0}),
   routes: [
-    { path: '/about', component: () => System.import('../views/About.vue')},
-    { path: '/contact', component: () => System.import('../views/Contact.vue')},
-    { path: '/todo', component: () => System.import('../views/ToDo.vue')},
+    {path: '/about', component: () => System.import('../views/About.vue')},
+    {path: '/contact', component: () => System.import('../views/Contact.vue')},
+    {path: '/todo', component: () => System.import('../views/ToDo.vue')},
     // { path: '/item/:id(\\d+)', component: ItemView },
     // { path: '/user/:id', component: UserView },
-    { path: '/', redirect: '/todo' }
-  ]
-})
+    {path: '/', redirect: '/todo'},
+  ],
+});

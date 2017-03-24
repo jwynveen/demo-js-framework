@@ -1,5 +1,6 @@
-export const focus = {
-  inserted: function (el) {
+const focus = {
+  inserted(el) {
     el.focus();
   },
 };
+export {focus as default};
