@@ -1,3 +1,4 @@
+
 Vue.directive('focus', {
   inserted: function (el) {
     el.focus();
@@ -8,16 +9,8 @@ Vue.directive('focus', {
 new Vue({
   el: '#app',
   data: {
-    message: 'Show me!',
-    items: [{
-      text: 'Added server-side',
-      checked: false,
-      isEditMode: false,
-    }, {
-      text: 'Delete me',
-      checked: true,
-      isEditMode: false
-    }]
+    isLoading: true,
+    items: [],
   },
   methods: {
     toggleEditMode: function (item) {
@@ -34,4 +27,21 @@ new Vue({
       });
     }
   },
-})
+  created: function () {
+    console.log('ToDo:created');
+    const self = this;
+    setTimeout(function () {
+      // simulating the wait for loading data from server on initial load
+      self.isLoading = false;
+      self.items = [{
+        text: 'Added server-side',
+        checked: false,
+        isEditMode: false,
+      }, {
+        text: 'Delete me',
+        checked: true,
+        isEditMode: false
+      }];
+    }, 1000);
+  }
+});

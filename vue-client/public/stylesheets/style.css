@@ -10,3 +10,31 @@ a {
 .text-strikethrough {
   text-decoration: line-through;
 }
+
+/* js/components/Spinner.js */
+.spinner {
+  right: 15px;
+  bottom: 15px;
+}
+.spinner.show {
+  animation-play-state: running;
+}
+
+.spinner.v-enter,
+.spinner.v-leave-active {
+  opacity: 0;
+}
+
+.spinner.v-enter-active,
+.spinner.v-leave {
+  opacity: 1;
+}
+
+.spinner-result {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  color: lightgray;
+  background-color: darkslategray;
+  padding: 3px;
+}
