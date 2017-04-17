@@ -7,4 +7,4 @@ $ npm install
 $ npm start
 ```
 
-Go to [http://localhost:3000](http://localhost:3001)
+Go to [http://localhost:3001](http://localhost:3001)
